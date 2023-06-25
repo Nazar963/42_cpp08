@@ -1,14 +1,14 @@
 CC = c++ -Wall -Wextra -Werror -std=c++98
 CFILES = main.cpp
-MAIN = easyfind
+NAME = easyfind
 
-all: $(MAIN)
+all: $(NAME)
 
-$(MAIN):
-	$(CC) -g $(CFILES) easyfind.hpp -o $(MAIN)
+$(NAME):
+	$(CC) -g $(CFILES) easyfind.hpp -o $(NAME)
 
 clean:
-	rm $(MAIN)
+	rm $(NAME)
 
 fclean: clean
 

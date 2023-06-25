@@ -8,7 +8,7 @@
 template <typename T>
 void easyfind(T a, int loco)
 {
-	std::vector<int>::iterator it = std::find(a.begin(), a.end(), loco);
+	typename T::iterator it = std::find(a.begin(), a.end(), loco);
 	if (it != a.end())
 		std::cout << "index: " << std::distance(a.begin(), it) << std::endl;
 	else

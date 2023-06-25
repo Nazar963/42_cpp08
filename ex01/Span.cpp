@@ -48,44 +48,39 @@ int	Span::longestSpan()
 {
 	if (_loco.size() < 2)
 		throw lowNumberOfElements();
-	int min = _loco[0];
-	int max = _loco[0];
-	for(size_t i = 1; i < _loco.size(); i++)
+	// int min = _loco[0];
+	// int max = _loco[0];
+	// for(size_t i = 1; i < _loco.size(); i++)
+	// {
+	// 	if (_loco[i] < min)
+	// 		min = _loco[i];
+	// 	else if (_loco[i] > max)
+	// 		max = _loco[i];
+	// }
+	// return (max - min);
+	int maxDiff = INT_MIN;
+	for(size_t i = 0; i < _loco.size(); i++)
 	{
-		if (_loco[i] < min)
-			min = _loco[i];
-		else if (_loco[i] > max)
-			max = _loco[i];
+		for(size_t j = i + 1; j < _loco.size(); j++)
+		{
+			int diff = std::abs(_loco[i] - _loco[j]);
+			if(diff > maxDiff)
+				maxDiff = diff;
+		}
 	}
-	return (max - min);
+	return (maxDiff);
 }
 
 void	Span::range(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
 	int i = *begin;
-	// int holder;
+	srand(time(NULL));
 	while (_loco.size() < _size && i < *end)
 	{
-		// if (i % 2 == 0)
-		// {
-		// 	holder = i + 13;
-		// 	_loco.push_back(holder);
-		// }
-		// else if (i % 3 == 0)
-		// {
-		// 	holder = i - 3;
-		// 	_loco.push_back(i - 3);
-		// }
-		// else
-		// {
-		// 	holder = i;
-		// 	_loco.push_back(i);
-		// }
-		_loco.push_back(i);
-		// std::cout << holder << " ,";
+		const int value = rand();
+		_loco.push_back(value);
 		i++;
 	}
-	// std::cout << std::endl;
 }
 
 Span::~Span(){}

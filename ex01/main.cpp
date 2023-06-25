@@ -34,8 +34,8 @@ int main()
 	// eren.range(levi.begin(), levi.end());
 	// try
 	// {
-	// 	std::cout << sp.shortestSpan() << std::endl;
-	// 	std::cout << sp.longestSpan() << std::endl;
+	// 	std::cout << eren.shortestSpan() << std::endl;
+	// 	std::cout << eren.longestSpan() << std::endl;
 	// }
 	// catch(Span::lowNumberOfElements& e)
 	// {
